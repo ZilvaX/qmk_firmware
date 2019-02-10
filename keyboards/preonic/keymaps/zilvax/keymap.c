@@ -18,7 +18,7 @@
 #include "muse.h"
 #define ESC_CTL LCTL_T(KC_ESC)
 #define LL_BSPC LT(_LOWER, KC_BSPC)
-#define RL_ENT  LT(_LOWER, KC_ENT)
+#define RL_ENT  LT(_RAISE, KC_ENT)
 
 enum preonic_layers {
   _QWERTY,
