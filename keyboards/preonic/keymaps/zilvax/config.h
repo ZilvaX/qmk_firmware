@@ -40,3 +40,6 @@
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
 
 #endif
+
+// NKRO
+#define FORCE_NKRO
