@@ -40,4 +40,4 @@
 #define FORCE_NKRO
 
 // Define how long for a tap to become a hold in ms (Default: 200)
-#define TAPPING_TERM 150
+#define TAPPING_TERM 175
