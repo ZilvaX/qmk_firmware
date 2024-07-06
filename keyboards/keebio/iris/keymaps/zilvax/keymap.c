@@ -115,3 +115,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
+
+// Combos
+// Src: https://jasoncarloscox.com/writing/combo-mods/
+
+// define combo names
+enum combos {
+    COMBO_LCTL,
+    COMBO_LGUI,
+    COMBO_LALT,
+    COMBO_LALTGUI,
+    // more here...
+    COMBO_LENGTH // nifty trick to avoid manually specifying how many combos you have
+};
+
+uint16_t COMBO_LEN = COMBO_LENGTH; // nifty trick continued
+
+// define keys that make up combos
+const uint16_t PROGMEM fd_combo[] = {KC_F, KC_D, COMBO_END};
+const uint16_t PROGMEM fs_combo[] = {KC_F, KC_S, COMBO_END};
+const uint16_t PROGMEM fa_combo[] = {KC_F, KC_A, COMBO_END};
+const uint16_t PROGMEM fds_combo[] = {KC_F, KC_D, KC_S, COMBO_END};
+
+combo_t key_combos[] = {
+    [COMBO_LCTL] = COMBO(fa_combo, KC_LCTL),
+    [COMBO_LGUI] = COMBO(fd_combo, KC_LGUI),
+    [COMBO_LALT] = COMBO(fs_combo, KC_LALT),
+    [COMBO_LALTGUI] = COMBO(fds_combo, LALT(KC_LGUI))
+    // more here...
+};
+
+
