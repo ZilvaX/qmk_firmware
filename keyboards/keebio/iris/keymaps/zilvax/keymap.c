@@ -125,6 +125,10 @@ enum combos {
     COMBO_LGUI,
     COMBO_LALT,
     COMBO_LALTGUI,
+    COMBO_RCTL,
+    COMBO_RGUI,
+    COMBO_RALT,
+    COMBO_RALTGUI,
     // more here...
     COMBO_LENGTH // nifty trick to avoid manually specifying how many combos you have
 };
@@ -137,11 +141,21 @@ const uint16_t PROGMEM fs_combo[] = {KC_F, KC_S, COMBO_END};
 const uint16_t PROGMEM fa_combo[] = {KC_F, KC_A, COMBO_END};
 const uint16_t PROGMEM fds_combo[] = {KC_F, KC_D, KC_S, COMBO_END};
 
+const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM jl_combo[] = {KC_J, KC_L, COMBO_END};
+const uint16_t PROGMEM jscln_combo[] = {KC_J, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM jkl_combo[] = {KC_J, KC_K, KC_L, COMBO_END};
+
 combo_t key_combos[] = {
     [COMBO_LCTL] = COMBO(fa_combo, KC_LCTL),
     [COMBO_LGUI] = COMBO(fd_combo, KC_LGUI),
     [COMBO_LALT] = COMBO(fs_combo, KC_LALT),
-    [COMBO_LALTGUI] = COMBO(fds_combo, LALT(KC_LGUI))
+    [COMBO_LALTGUI] = COMBO(fds_combo, LALT(KC_LGUI)),
+
+    [COMBO_RGUI] = COMBO(jk_combo, KC_RGUI),
+    [COMBO_RALT] = COMBO(jl_combo, KC_RALT),
+    [COMBO_RCTL] = COMBO(jscln_combo, KC_RCTL),
+    [COMBO_RALTGUI] = COMBO(jkl_combo, RALT(KC_RGUI)),
     // more here...
 };
 
