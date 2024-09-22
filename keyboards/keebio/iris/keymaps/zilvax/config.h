@@ -7,3 +7,6 @@
 // Define how long for a tap to become a hold in ms (Default: 200)
 #define TAPPING_TERM 150
 
+// Allow preonic to wakeup on M1 macbooks
+#define USB_SUSPEND_WAKEUP_DELAY 200
+
